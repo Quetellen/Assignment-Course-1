@@ -1,0 +1,94 @@
+body{
+    text-align: center;
+    background-color: rgb(237, 245, 245);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color: rgba(118, 88, 46, 0.989);
+    font-family: poppins;
+    font-size: 400%;
+    text-align: center;
+}
+h3{
+    font-family: poppins;
+    font-size: 200%;
+    color: rgb(169, 145, 83);
+}
+form{
+    font-family: poppins;
+    font-size: 24px;
+    color: rgb(27, 25, 25);
+}
+.container {
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2);
+    border-radius: 24px;
+    width:50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 12px;
+    background: linear-gradient(120deg,#f5e6d2,#a39579 100%);
+}
+input[type="text"]{
+    width: auto;
+    display: inline;
+    border: 1px solid #7a7373;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 8px;
+}
+input[type="datetime-local"]{
+    width: auto;
+    display:inline ;
+    border: 1px solid #7a7373;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 8px;
+    font-family: poppins;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+}
+.input-control {
+    font-family: poppins;
+    font-size: 24px;
+    color: rgb(27, 25, 25);
+}
+textarea{
+    width: auto;
+    display: inline;
+    border: 1px solid #7a7373;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 8px;
+}
+button {
+    width: auto;
+    display: inline;
+    border: 1px solid #7a7373;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 8px;
+    font-family: poppins;
+    font-size: 24px;
+}
+.error{
+    color: #ff3860;
+    font-size: 20px;
+}
+.input-control {
+    font-family: poppins;
+    font-size: 24px;
+    color: rgb(27, 25, 25);
+    width:100%;
+}

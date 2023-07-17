@@ -1,0 +1,29 @@
+<h1>Archi+tech Innovations</h1>
+
+<div class="container">
+
+   <form id="form" action="/" method="get" name="form">
+      <h3>Create a Meeting Schedule</h3>
+      <!-- FULL NAME -->
+      <div class="input-control">
+         <label for="fname">Meeting Topic</label><br>
+         <input type="text" id="fname" name="fname1" value=" "><br>
+         <label for="lname">Number of People</label><br>
+         <input type="text" id="lname" name="lname1" value=" "><br>
+      </div>
+      <!--DATES--> 
+      <div class="input-control">
+         <label for="meetingTime">Start Time</label> <br>
+         <input type="datetime-local" id="meetingTime" name="meeting-time" required> <br>
+         <div class="error"></div>
+      </div>
+      <!-- DETAILS -->
+      <div class="input-control">
+         <p>Aditional details</p>
+         <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+      </div>
+      <!-- BUTON -->
+      <button onclick="setAppointmentDate()" id="submit" type="submit">Submit</button>
+      <button id="reset" type="reset">Reset</button>
+   </form> 
+</div>  
