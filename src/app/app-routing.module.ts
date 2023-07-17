@@ -7,9 +7,9 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'home', component: IndexComponent },
-  { path: 'products', component: ContactComponent },
-  { path: 'profile', component: LoginComponent }
+  { path: 'index', component: IndexComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

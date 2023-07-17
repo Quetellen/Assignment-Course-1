@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <form id="form" action="/" method="post" name="newRegister">
+        <form #login="ngForm" (ngSubmit) = "submit(login)"  id="form" action="/" method="post" name="newRegister">
             <h3>Welcome to Client Creation</h3>
             <p>Please fill in this form to create a client</p>
             <br>
@@ -35,6 +35,7 @@
                 <div class="error"></div>
             </div>
             <!--BUTON-->       
-            <button formaction="./appointment" id="submit" type="submit">Register</button>
+            <button id="submit" (click)="onSave()">Register</button> <br>
+            {{savedMessage}}
         </form>
     </div>
