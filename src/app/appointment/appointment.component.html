@@ -23,7 +23,7 @@
          <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
       </div>
       <!-- BUTON -->
-      <button onclick="setAppointmentDate()" id="submit" type="submit">Submit</button>
-      <button id="reset" type="reset">Reset</button>
+      <button id="submit" (click)="onSave()">Submit</button> <br>
+            {{savedMessage}} 
    </form> 
 </div>  
