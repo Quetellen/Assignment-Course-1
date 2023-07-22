@@ -1,0 +1,42 @@
+<h1>Archi+tech Innovations</h1>
+
+    <div class="container">
+
+    <form [formGroup]="signUpForm">
+        <h3>Welcome to Client Creation</h3>
+        <p>Please fill in this form to create a client</p>
+        <br>
+        <!-- FULL NAME -->
+        <div class="input-field" [class.error]="signUpForm.controls['fullName'].dirty && signUpForm.hasError('required','fullName')">
+            <label for="username">Full Name</label> <br>
+            <input formControlName="fullName" type="text" placeholder="Full Name">
+            <small *ngIf="signUpForm.controls['fullName'].dirty && signUpForm.hasError('required','fullName')" class="text-danger">*Name is required</small>
+        </div> 
+        <!-- EMAIL -->
+        <div class="input-field" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')">
+            <label for="email">Email</label> <br>
+            <input formControlName="email" type="text" placeholder="Email">
+            <small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')" class="text-danger">*Email is required</small>
+        </div> 
+        <!-- ADDRESS -->
+        <div class="input-field">
+            <label for="address">Address</label><br>
+            <input id="address" type="text" name="address" placeholder="Address" required>        
+        </div> 
+        <!-- PASSWORD -->
+        <div class="input-field" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')">
+            <label for=" password">Password</label> <br>
+            <input formControlName="password" [type]="text" placeholder="Password" >
+            <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">*Password is required</small>
+        </div> 
+        <div class="input-field">
+            <label for="password" [class.error]="signUpForm.controls['password2'].dirty && signUpForm.hasError('required','password2')">Password</label><br>
+            <input formControlName="password2" [type]="text" placeholder="Password again" required>
+
+            <small *ngIf="signUpForm.controls['password2'].dirty && signUpForm.hasError('required','password2')" class="text-danger">*Password is required</small>
+            <!-- <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span> -->
+        </div>
+      <!-- BUTON -->
+        <button type="submit" class="btn btn-primary btn-block mt-4 w-100" (click)="onSignUp()">Register</button> <br>
+        <div class="text-center pt-4 text-muted">Already have an account? <a id="forget" routerLink="../login">Login</a></div>
+    </form>  

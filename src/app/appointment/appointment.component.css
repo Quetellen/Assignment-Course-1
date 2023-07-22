@@ -82,13 +82,8 @@ button {
     font-family: poppins;
     font-size: 24px;
 }
-.error{
-    color: #ff3860;
+.message{
     font-size: 20px;
-}
-.input-control {
     font-family: poppins;
-    font-size: 24px;
-    color: rgb(27, 25, 25);
-    width:100%;
+    font-style: italic;
 }

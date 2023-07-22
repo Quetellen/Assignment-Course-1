@@ -2,20 +2,24 @@
 
 <div class="container">
 
-   <form id="form" action="/" method="get" name="form">
+   <form [formGroup]="appointmentForm">
       <h3>Create a Meeting Schedule</h3>
       <!-- FULL NAME -->
-      <div class="input-control">
+      <div class="input-field" [class.error]="appointmentForm.controls['meetingTopic'].dirty && appointmentForm.hasError('required','meetingTopic')">
          <label for="fname">Meeting Topic</label><br>
-         <input type="text" id="fname" name="fname1" value=" "><br>
+         <input formControlName="meetingTopic" type="text" placeholder="..."><br>
+      </div>
+         <small *ngIf="appointmentForm.controls['meetingTopic'].dirty && appointmentForm.hasError('meetingTopic','username')" class="text-danger">*Meeting topic is required</small>
+      <div>  
          <label for="lname">Number of People</label><br>
          <input type="text" id="lname" name="lname1" value=" "><br>
       </div>
       <!--DATES--> 
-      <div class="input-control">
+      <div class="input-field" [class.error]="appointmentForm.controls['time'].dirty && appointmentForm.hasError('required','time')">
          <label for="meetingTime">Start Time</label> <br>
          <input type="datetime-local" id="meetingTime" name="meeting-time" required> <br>
-         <div class="error"></div>
+         <small *ngIf="appointmentForm.controls['time'].dirty && appointmentForm.hasError('meetingTopic','time')" class="text-danger">*Date is required</small>
+        
       </div>
       <!-- DETAILS -->
       <div class="input-control">
@@ -23,7 +27,9 @@
          <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
       </div>
       <!-- BUTON -->
-      <button id="submit" (click)="onSave()">Submit</button> <br>
-            {{savedMessage}} 
+      <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button> <br>
+      
    </form> 
 </div>  
+
+

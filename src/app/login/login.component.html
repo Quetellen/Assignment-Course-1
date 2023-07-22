@@ -2,40 +2,75 @@
 
     <div class="container">
 
-        <form #login="ngForm" (ngSubmit) = "submit(login)"  id="form" action="/" method="post" name="newRegister">
-            <h3>Welcome to Client Creation</h3>
-            <p>Please fill in this form to create a client</p>
+        <form [formGroup]="loginForm">
+            <h3>Welcome to Archi+tech</h3>
+            <p>Please login</p>
             <br>
-            <!--FULL NAME-->
-            <div class="input-control">
-                <label for="username">Full Name</label> <br>
-                <input id="username" name="username" type="text" placeholder="Full Name" required>
-                <div class="error"></div>
-            </div> 
             <!--EMAIL-->
-            <div class="input-control">
+            <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
                 <label for="email">Email</label> <br>
-                <input id="email" name="email" type="email" placeholder="Email" required>
-                <div class="error"></div>
+                <span class="fa fa-user p-2"></span>
+                <input formControlName="username" type="text" placeholder="Email">
             </div> 
-            <!--ADDRESS-->
-            <div class="input-control">
-                <label for="address">Address</label><br>
-                <input id="address" type="text" name="address" placeholder="Address" required>        
-            </div> 
+            <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Email is required</small>
             <!--PASSWORD-->
-            <div class="input-control">
+            <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
                 <label for=" password">Password</label> <br>
-                <input id="password" name="password" type="password" placeholder="Password" required>
-                <div class="error"></div>
-            </div> 
-            <div class="input-control">
-                <label for="password">Password</label><br>
-                <input id="password2" name="password2" type="password" placeholder="Password again" required>
-                <div class="error"></div>
-            </div>
-            <!--BUTON-->       
-            <button id="submit" (click)="onSave()">Register</button> <br>
-            {{savedMessage}} 
+                <span class="fa fa-lock p-2"></span>
+                <input formControlName="password" [type]="type" placeholder="Password">
+               <!-- <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span> -->
+            </div>    
+            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Password is required</small>
+            <!--BUTON-->     
+            <div class="form-inline fr mt-4">
+                <a id="forget" class="font-weight-bold" > Forgot password</a>
+            </div>  
+            <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button> <br>
+            <div class="text-center pt-4 text-muted">Don't have account?<a id="forget" routerLink="../signup">SignUp</a></div>
         </form>
     </div>
+
+
+
+
+<!-- 
+<h1>Archi+tech Innovations</h1>
+
+    <div class="container">
+
+    <form #login="ngForm" (ngSubmit) = "submit(login)"  id="form" action="/" method="post" name="newRegister">
+        <h3>Welcome to Client Creation</h3>
+        <p>Please fill in this form to create a client</p>
+        <br>
+        FULL NAME
+        <div class="input-control">
+            <label for="username">Full Name</label> <br>
+            <input formControlName="username" id="username" name="username" type="text" placeholder="Full Name" required>
+            <div class="error"></div>
+        </div> 
+        EMAIL
+        <div class="input-control">
+            <label for="email">Email</label> <br>
+            <input id="email" name="email" type="email" placeholder="Email" required>
+            <div class="error"></div>
+        </div> 
+        ADDRESS
+        <div class="input-control">
+            <label for="address">Address</label><br>
+            <input id="address" type="text" name="address" placeholder="Address" required>        
+        </div> 
+        PASSWORD
+        <div class="input-control">
+            <label for=" password">Password</label> <br>
+            <input id="password" name="password" type="password" placeholder="Password" required>
+            <div class="error"></div>
+        </div> 
+        <div class="input-control">
+            <label for="password">Password</label><br>
+            <input id="password2" name="password2" type="password" placeholder="Password again" required>
+            <div class="error"></div>
+        </div>
+      BUTON      
+        <button id="submit" (click)="onSave()">Register</button> <br>
+        <div class="message">{{savedMessage}} </div>
+    </form>  -->
